@@ -1079,6 +1079,23 @@ $(document).ready(function(){
         }
         
     });
+    $gameCanvas.touchit({
+        onTouchStart: function (x, y) {
+            $("#touched").text('Touch Start');
+        },
+        onTouchMove: function (x, y) {
+            $("#touched").text("Touch Move");
+        },
+        onTouchEnd: function (x, y) {
+            $("#touched").text("Touch End ");
+        },
+        onDoubleTap: function (x, y) {
+            $("#touched").text("Double Tap ");
+        },
+        onPinch: function (scale) {
+            $("#touched").text("Pinch ");
+        }
+    });
     
                                                             //Wavelet
     $wgameCanvas.mousedown(function(event) {// Starts drawing the trueline (blue) when the mouse button is pressed
@@ -1191,6 +1208,23 @@ $(document).ready(function(){
         if(pressed == 1){
             pressed = 0;
             populatewaves();
+        }
+    });
+    $wgameCanvas.touchit({
+        onTouchStart: function (x, y) {
+            $("#touched").text('Touch Start');
+        },
+        onTouchMove: function (x, y) {
+            $("#touched").text("Touch Move");
+        },
+        onTouchEnd: function (x, y) {
+            $("#touched").text("Touch End ");
+        },
+        onDoubleTap: function (x, y) {
+            $("#touched").text("Double Tap ");
+        },
+        onPinch: function (scale) {
+            $("#touched").text("Pinch ");
         }
     });
 
